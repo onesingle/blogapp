@@ -1,7 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
-from blog.blogapp import app
+from blogapp import db
 from datetime import datetime
-db = SQLAlchemy(app)
 
 class Todo(db.Model):
     __tablename__ = 'todos'
