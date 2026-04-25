@@ -1,5 +1,7 @@
 # BlogApp
 
+English | [中文版](./README_CN.md)
+
 A simple Flask-based blog application with user authentication and todo management.
 
 ## Features

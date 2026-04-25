@@ -1,5 +1,7 @@
 # BlogApp
 
+[中文版](./README_CN.md) | [English](./README.md)
+
 一个简单的基于Flask的博客应用程序，具有用户认证和待办事项管理功能。
 
 ## 功能
