@@ -1,12 +1,13 @@
 #coding:utf-8
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
+from datetime import datetime, timezone
 
 app = Flask(__name__)
-app.config.from_pyfile('config.cfg')   #导入配置文件
+app.config.from_pyfile('config.cfg')
 
 db = SQLAlchemy(app)
+
 
 class Todo(db.Model):
     __tablename__ = 'todos'
@@ -20,11 +21,13 @@ class Todo(db.Model):
         self.title = title
         self.text = text
         self.done = False
-        self.pub_date = datetime.utcnow()
+        self.pub_date = datetime.now(timezone.utc)
 
-import view
+
+import view  # noqa: E402, F401
+
+with app.app_context():
+    db.create_all()
 
 if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
     app.run()

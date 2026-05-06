@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 {% block body %}
   <form action="" method=post class="form-horizontal">
+    <input type="hidden" name="csrf_token" value="{{ session.csrf_token }}">
     <h2>Create New Todo</h2>
     <div class="control-group">
         <div class="controls">
